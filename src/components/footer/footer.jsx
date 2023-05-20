@@ -6,8 +6,8 @@ const Footer = () => {
       <div className="footer-div m-up-3 has-acent p-up-2">
         <div className="textbox">
           <div className="text is-dark text-center">
-            Made with <span className="is-blue">&lt;/&gt;</span> by Toufiq
-            Choudhari
+            Made by <span className="is-blue">&lt;/&gt;</span> by
+            <span style={{ fontWeight: "bold" }}> Toufiq Choudhari</span>
           </div>
           <div className="footer-icons text-center">
             <a href="https://www.linkedin.com/in/toufiq-choudhari-56208b203/">
