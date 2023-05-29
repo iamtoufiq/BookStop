@@ -74,13 +74,13 @@ export const initialInputFieldAddAddress = {
 };
 
 export const dummyAddress = {
-  street: "Chandni Chowk, gali no. 12",
-  city: "North Delhi",
-  state: "New Delhi",
-  zipCode: "110006",
+  street: "123 Main Street",
+  city: "Example City",
+  state: "Example State",
+  zipCode: "123456",
   country: "India",
-  name: "Sidhu Sharma",
-  mobile: "9211138899",
+  name: "John Doe",
+  mobile: "1234567890",
 };
 
 export const largeLoader = {

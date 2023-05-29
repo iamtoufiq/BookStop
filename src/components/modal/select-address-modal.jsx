@@ -21,8 +21,8 @@ const SelectAddressModal = ({ showModal, toggleModal }) => {
             <i className="fas fa-times" />
           </button>
           <div className="is-3 semibold m-dw-2">Select Delivery Address</div>
-          {address.map((address) => (
-            <SelectAddressList address={address} />
+          {address.map((address, index) => (
+            <SelectAddressList address={address} key={index} />
           ))}
         </div>
       </div>

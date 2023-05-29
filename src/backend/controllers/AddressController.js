@@ -13,6 +13,7 @@ import { v4 as uuid } from "uuid";
  * */
 
 export const getAllAddressesHandler = function (schema, request) {
+  console.log("hell");
   const userId = requiresAuth.call(this, request);
   if (!userId) {
     new Response(
@@ -47,7 +48,6 @@ export const addNewAddressHandler = function (schema, request) {
     }
     const userAddresses = schema.users.findBy({ _id: userId }).address;
     const { address } = JSON.parse(request.requestBody);
-   
     userAddresses.push({
       address,
       createdAt: formatDate(),
@@ -57,6 +57,7 @@ export const addNewAddressHandler = function (schema, request) {
     this.db.users.update({ _id: userId }, { address: userAddresses });
     return new Response(201, {}, { address: userAddresses });
   } catch (error) {
+    console.log(error);
     return new Response(
       500,
       {},
@@ -90,6 +91,71 @@ export const removeAddressHandler = function (schema, request) {
     userAddresses = userAddresses.filter((item) => item._id !== addressId);
     this.db.users.update({ _id: userId }, { address: userAddresses });
     return new Response(200, {}, { address: userAddresses });
+  } catch (error) {
+    return new Response(
+      500,
+      {},
+      {
+        error,
+      }
+    );
+  }
+};
+
+/**
+ * This handler handles adding items to user's address.
+ * send POST Request at /api/user/address/:productId
+ * body contains {action} (whose 'type' can be increment or decrement)
+ * */
+
+export const updateAddressHandler = function (schema, request) {
+  const addressId = request.params.addressId;
+  const userId = requiresAuth.call(this, request);
+  try {
+    if (!userId) {
+      new Response(
+        404,
+        {},
+        {
+          errors: ["The email you entered is not Registered. Not Found error"],
+        }
+      );
+    }
+    const userAddress = schema.users.findBy({
+      _id: userId,
+    }).address;
+
+    const {
+      address: { name, street, city, state, country, zipCode, mobile },
+    } = JSON.parse(request.requestBody);
+
+    userAddress.forEach((address) => {
+      if (address._id === addressId) {
+        address.name = name;
+        address.street = street;
+        address.city = city;
+        address.state = state;
+        address.country = country;
+        address.zipCode = zipCode;
+        address.mobile = mobile;
+        address.updatedAt = formatDate();
+      }
+    });
+    this.db.users.update(
+      {
+        _id: userId,
+      },
+      {
+        address: userAddress,
+      }
+    );
+    return new Response(
+      200,
+      {},
+      {
+        address: userAddress,
+      }
+    );
   } catch (error) {
     return new Response(
       500,

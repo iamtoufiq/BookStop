@@ -30,18 +30,22 @@ const AddressPage = () => {
   useEffect(() => {
     (async () => {
       await getUserAddress(token, dispatch);
+      console.log(address);
       setAddressList(
-        address.map((address) => <AddressBlock addressData={address} />)
+        address.map((address, ind) => (
+          <AddressBlock addressData={address} key={ind} />
+        ))
       );
     })();
-  }, []);
+  }, [address]);
 
   useEffect(() => {
     setAddressList(
-      address.map((address) => (
+      address.map((address, ind) => (
         <AddressBlock
           addressData={address}
           setEditAddressID={setEditAddressID}
+          key={ind}
         />
       ))
     );
@@ -62,7 +66,7 @@ const AddressPage = () => {
             className="is-light flex-c-w align-center justify-content-center add-address br-2"
           >
             <i className="fa-solid fa-plus is-6" />
-            <div className="title m-up-1 semibold is-4">Add address</div>
+            <div className="title m-up-1 semibold is-4">Add a address</div>
           </div>
           {addressList}
         </div>

@@ -9,21 +9,26 @@ const Filters = () => {
     },
     dispatch,
   } = useData();
+
   const [hideFilter, setHideFilter] = useState(true);
+
   const showFilterClick = () => {
     setHideFilter((prevState) => !prevState);
   };
+
   const filterClickHandler = (dispatchArguments) => {
     dispatch(dispatchArguments);
   };
+
   const clearFilters = () => {
     dispatch({ type: reducerAction.CLEAR_FILTER });
   };
+
   return (
     <div
       className={`filter-menu ${
-        hideFilter && "hide-filter-menu"
-      } p-x-4 p-up-2  dk-shadow`}
+        hideFilter ? "hide-filter-menu" : ""
+      } p-x-4 p-up-2 dk-shadow`}
     >
       <div className="filter-menu-responsive flex-row align-center pointer space-between">
         <div onClick={showFilterClick} className="title is-dark">
@@ -56,214 +61,96 @@ const Filters = () => {
           }
         />
         <datalist id="tickmarks">
-          <option value="200"></option>
-          <option value="400"></option>
-          <option value="600"></option>
-          <option value="800"></option>
-          <option value="1000"></option>
-          <option value="1200"></option>
-          <option value="1400"></option>
-          <option value="1600"></option>
-          <option value="1800"></option>
-          <option value="2000"></option>
+          <option value="200" />
+          <option value="400" />
+          <option value="600" />
+          <option value="800" />
+          <option value="1000" />
+          <option value="1200" />
+          <option value="1400" />
+          <option value="1600" />
+          <option value="1800" />
+          <option value="2000" />
         </datalist>
       </div>
       <div className="list-container">
         <div className="title semibold">Category</div>
         <ol className="list list-none">
-          <li className="list-items">
-            <label className="is-light form-checkbox is-2">
-              <input
-                type="checkbox"
-                checked={category.includes("Stocks")}
-                onChange={(e) =>
-                  filterClickHandler({
-                    type: reducerAction.CATEGORY_STOCKS,
-                    value: e.target.checked,
-                  })
-                }
-              />
-              Stocks
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="is-light form-checkbox is-2">
-              <input
-                type="checkbox"
-                checked={category.includes("Forex")}
-                onChange={(e) =>
-                  filterClickHandler({
-                    type: reducerAction.CATEGORY_FOREX,
-                    value: e.target.checked,
-                  })
-                }
-              />
-              Forex
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="is-light form-checkbox is-2">
-              <input
-                type="checkbox"
-                checked={category.includes("Crypto")}
-                onChange={(e) =>
-                  filterClickHandler({
-                    type: reducerAction.CATEGORY_CRYPTO,
-                    value: e.target.checked,
-                  })
-                }
-              />
-              Crypto
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="is-light form-checkbox is-2">
-              <input
-                type="checkbox"
-                checked={category.includes("Charting")}
-                onChange={(e) =>
-                  filterClickHandler({
-                    type: reducerAction.CATEGORY_CHARTING,
-                    value: e.target.checked,
-                  })
-                }
-              />
-              Charting
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="is-light form-checkbox is-2">
-              <input
-                type="checkbox"
-                checked={category.includes("Investment")}
-                onChange={(e) =>
-                  filterClickHandler({
-                    type: reducerAction.CATEGORY_INVESTMENT,
-                    value: e.target.checked,
-                  })
-                }
-              />
-              Investment
-            </label>
-          </li>
+          {["Stocks", "Forex", "Crypto", "Charting", "Investment"].map(
+            (cat) => (
+              <li className="list-items" key={cat}>
+                <label className="is-light form-checkbox is-2">
+                  <input
+                    type="checkbox"
+                    checked={category.includes(cat)}
+                    onChange={(e) =>
+                      filterClickHandler({
+                        type: reducerAction[`CATEGORY_${cat.toUpperCase()}`],
+                        value: e.target.checked,
+                      })
+                    }
+                  />
+                  {cat}
+                </label>
+              </li>
+            )
+          )}
         </ol>
       </div>
       <div className="list-container">
         <div className="title semibold">Rating</div>
         <ol className="list list-none">
-          <li className="list-items">
-            <label className="form-radio-label">
-              <input
-                type="radio"
-                checked={rating === 4}
-                onChange={() =>
-                  filterClickHandler({
-                    type: reducerAction.SELECT_RATING,
-                    value: 4,
-                  })
-                }
-                name="opinion"
-              />
-              <i />
-              <span className="form-radio-button-text is-2 is-medium">
-                4 Star &amp; above
-              </span>
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="form-radio-label">
-              <input
-                type="radio"
-                checked={rating === 3}
-                onChange={() =>
-                  filterClickHandler({
-                    type: reducerAction.SELECT_RATING,
-                    value: 3,
-                  })
-                }
-                name="opinion"
-              />
-              <i />
-              <span className="form-radio-button-text is-2 is-medium">
-                3 Star &amp; above
-              </span>
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="form-radio-label">
-              <input
-                type="radio"
-                checked={rating === 2}
-                onChange={() =>
-                  filterClickHandler({
-                    type: reducerAction.SELECT_RATING,
-                    value: 2,
-                  })
-                }
-                name="opinion"
-              />
-              <i />
-              <span className="form-radio-button-text is-2 is-medium">
-                2 Star &amp; above
-              </span>
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="form-radio-label">
-              <input
-                type="radio"
-                checked={rating === 1}
-                onChange={() =>
-                  filterClickHandler({
-                    type: reducerAction.SELECT_RATING,
-                    value: 1,
-                  })
-                }
-                name="opinion"
-              />
-              <i />
-              <span className="form-radio-button-text is-2 is-medium">
-                1 Star &amp; above
-              </span>
-            </label>
-          </li>
+          {[4, 3, 2, 1].map((num) => (
+            <li className="list-items" key={num}>
+              <label className="form-radio-label">
+                <input
+                  type="radio"
+                  checked={rating === num}
+                  onChange={() =>
+                    filterClickHandler({
+                      type: reducerAction.SELECT_RATING,
+                      value: num,
+                    })
+                  }
+                  name="opinion"
+                />
+                <i />
+                <span className="form-radio-button-text is-2 is-medium">
+                  {num} Star &amp; above
+                </span>
+              </label>
+            </li>
+          ))}
         </ol>
       </div>
       <div className="list-container">
         <div className="title semibold">Sort By</div>
         <ol className="list list-none">
-          <li className="list-items">
-            <label className="form-radio-label">
-              <input
-                type="radio"
-                name="sort"
-                checked={sort === reducerAction.SORT_LOW_TO_HIGH}
-                onChange={() =>
-                  filterClickHandler({ type: reducerAction.SORT_LOW_TO_HIGH })
-                }
-              />
-              <i />
-              <span className="form-radio-button-text is-light is-2">
-                Price low to high
-              </span>
-            </label>
-          </li>
-          <li className="list-items">
-            <label className="form-radio-label">
-              <input
-                type="radio"
-                name="sort"
-                checked={sort === reducerAction.SORT_HIGH_TO_LOW}
-                onChange={() =>
-                  filterClickHandler({ type: reducerAction.SORT_HIGH_TO_LOW })
-                }
-              />
-              <i />
-              <span className="form-radio-button-text is-light is-2">
-                Price high to low
-              </span>
-            </label>
-          </li>
+          {[
+            {
+              label: "Price low to high",
+              value: reducerAction.SORT_LOW_TO_HIGH,
+            },
+            {
+              label: "Price high to low",
+              value: reducerAction.SORT_HIGH_TO_LOW,
+            },
+          ].map(({ label, value }) => (
+            <li className="list-items" key={value}>
+              <label className="form-radio-label">
+                <input
+                  type="radio"
+                  name="sort"
+                  checked={sort === value}
+                  onChange={() => filterClickHandler({ type: value })}
+                />
+                <i />
+                <span className="form-radio-button-text is-light is-2">
+                  {label}
+                </span>
+              </label>
+            </li>
+          ))}
         </ol>
       </div>
     </div>

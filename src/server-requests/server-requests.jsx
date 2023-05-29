@@ -103,15 +103,19 @@ const getProductsData = async (dispatch) => {
     console.error(err);
   }
 };
-
+// ----------------- focus here -----------------------
 const getUserAddress = async (token, dispatch) => {
   try {
     const { data } = await axios.get("/api/user/address", getHeader(token));
     dispatch({ type: reducerAction.UPDATE_ADDRESS, value: data.address });
-  } catch (err) {}
+  } catch (err) {
+    // console.log(err);
+  }
 };
 
+// ----------------- focus here -----------------------
 const addAddress = async (addressData, token, dispatch) => {
+  // addressData= {street: '123 Main Street', city: 'Example City', state: 'Example State', zipCode: '123456', country: 'India', …}
   try {
     const { data } = await axios.post(
       "/api/user/address",
@@ -121,18 +125,20 @@ const addAddress = async (addressData, token, dispatch) => {
       getHeader(token)
     );
     dispatch({ type: reducerAction.UPDATE_ADDRESS, value: data.address });
-    let addedAddress = data.address.filter((address) => {
+    let addedAddress = data.address.find(({ address }) => {
       return (
         address.name === addressData.name &&
         address.street === addressData.street
       );
-    })[0];
+    });
+
     dispatch({
       type: reducerAction.CHANGE_DEFAULT_ADDRESS,
       value: addedAddress._id,
     });
     toast.success("Address Added");
   } catch (err) {
+    // console.log(err);
     toast.error("Add Address failed");
   }
 };
@@ -150,6 +156,7 @@ const deleteAddress = async (addressID, token, dispatch) => {
   }
 };
 
+// ----------------- focus here 2-----------------------
 const updateAddress = async (addressID, addressData, token, dispatch) => {
   try {
     const { data } = await axios.post(

@@ -3,7 +3,7 @@ import { reducerAction } from "../../utility/constants";
 
 const SelectAddressList = ({ address }) => {
   const { dispatch } = useData();
-  const { name, street, city, state, country } = address;
+  const { name, street, city, state, country } = address?.address;
   const clickAddress = () =>
     dispatch({
       type: reducerAction.CHANGE_DEFAULT_ADDRESS,
@@ -17,6 +17,7 @@ const SelectAddressList = ({ address }) => {
       >
         <div className="select-address-name semibold is-3">{name}</div>
         <div className="is-3 select-address-modal-para p-dw-1 p-1-r">
+          {console.log(`value of street is ${state}`)}
           {street}, {city}, {state}, {country}
         </div>
       </div>

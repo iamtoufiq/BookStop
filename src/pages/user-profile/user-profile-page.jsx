@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { OrderCard } from "../../components/cards/order-card";
 import { useAuth, useData } from "../../context";
@@ -7,6 +8,7 @@ const UserProfilePage = () => {
     dataState: { orders },
   } = useData();
   const { logoutHandler } = useAuth();
+
   return (
     <main>
       <div className="profile grid-30-70 m-up-4 width-80 center-x">
@@ -48,9 +50,6 @@ const UserProfilePage = () => {
             Your Orders
           </div>
           <div className="order-card-wrapper">
-            {/* {orders.map((order) => (
-              <OrderCard orderData={order} />
-            ))} */}
             {orders.map((order, index) => (
               <OrderCard key={index} orderData={order} />
             ))}

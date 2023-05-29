@@ -14,8 +14,7 @@ const SelectAddressCard = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedAddress, setSelectedAddress] = useState({});
 
-  const { name, street, city, state, country } = selectedAddress || {};
-
+  const { name, street, city, state, country } = selectedAddress?.address || {};
   const toggleModal = () => {
     setShowModal((prevState) => !prevState);
   };
@@ -41,7 +40,10 @@ const SelectAddressCard = () => {
           <div className="is-3 select-address-para p-dw-1 p-1-r">
             {street}, {city}, {state}, {country}
           </div>
-          <i className="far m-up-1 is-3 fa-edit"></i>
+          <i
+            className="far m-up-1 is-3 fa-edit"
+            onClick={console.log("editing address")}
+          ></i>
         </div>
       ) : (
         <div
@@ -50,6 +52,8 @@ const SelectAddressCard = () => {
         >
           <div className="select-address-name semibold is-lighter is-3">
             <i className="fas fa-plus m-r-1"></i>Add Address
+            {/* <h3>Toufiq Choudhari</h3>
+            <p>Block-7/B, street-22, Raipur, Chhattisgarh, India</p> */}
           </div>
         </div>
       )}

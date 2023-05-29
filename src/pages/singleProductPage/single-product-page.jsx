@@ -17,19 +17,21 @@ const SingleProductPage = () => {
   const { setPageLoading } = useAuth();
   const [productData, setProductData] = useState([]);
   let { productId } = useParams();
-  const findProductData = (productId, data) => {
-    return data.products.find(({ id }) => productId === id);
+  const gettingDetailByProductId = async () => {
+    try {
+      setPageLoading(true);
+      const response = await axios.get(`/api/products/${productId}`);
+      const data = response.data;
+      setProductData(data.product);
+      changeTitle(data.product.title);
+      setPageLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const getProductData = async () => {
-    setPageLoading(true);
-    const { data } = await axios.get("/api/products");
-    setProductData(findProductData(productId, data));
-    changeTitle(findProductData(productId, data).title);
-    setPageLoading(false);
-  };
   useEffect(() => {
-    getProductData();
+    gettingDetailByProductId();
   }, []);
 
   const { title, author, price, originalPrice, rating, image, description } =

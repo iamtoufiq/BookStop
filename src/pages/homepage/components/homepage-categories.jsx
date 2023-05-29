@@ -56,8 +56,8 @@ const HomepageCategories = () => {
                 Book Store
               </div>
               <div className="is-white is-4 m-y-1">
-                Read From wide range of Books Tailored to<br></br> jumpstart
-                your Trading Journey
+                Read a wide range of books designed for helping<br></br> you
+                begin to succeed in trading.
               </div>
               <button
                 onClick={() => navigate("/productListing")}

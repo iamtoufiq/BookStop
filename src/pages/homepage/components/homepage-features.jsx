@@ -59,13 +59,13 @@ const HomepageFeatures = () => {
               </div>
               <div className="card-body">
                 <div className="textbox">
-                  <div className="title">Improve Fundamentals</div>
+                  <div className="title">Enhance the Fundamentals</div>
                 </div>
                 <div className="textbox">
                   <p className="text">
-                    Improve your understanding of fundamental analysis by
-                    learning the essentials. With the abundance of books for
-                    sale, you can learn about different stages and levels of
+                    Learn the fundamentals to better your grasp of fundamental
+                    analysis. There are several books available for purchase
+                    that may teach you about the many phases and levels of
                     fundamental analysis.
                   </p>
                 </div>
@@ -95,10 +95,10 @@ const HomepageFeatures = () => {
                 </div>
                 <div className="textbox">
                   <p className="text">
-                    Learn about cryptocurrency trading by reading our most
-                    recent and cutting-edge books on the subject, which cover
-                    everything whether to purchase or sell crypto hold long term
-                    or short term.
+                    Read our latest and modern books on the subject to learn
+                    more about trading cryptocurrencies. These books cover
+                    buying and selling cryptocurrencies to holding them for long
+                    or short periods of time.
                   </p>
                 </div>
 
@@ -118,19 +118,19 @@ const HomepageFeatures = () => {
                 <div className="card-image has-transparent">
                   <img
                     className="img-responsive width-80"
-                    src="images/trader.png"
+                    src="images/traders.png"
                   />
                 </div>
               </div>
               <div className="card-body">
                 <div className="textbox">
-                  <div className="title">Learn to undestand Chart</div>
+                  <div className="title">Learn how to read charts</div>
                 </div>
                 <div className="textbox">
                   <p className="text">
-                    The core of trading is technical analysis. Use our
-                    hand-picked books to learn to read charts and spot chart
-                    patterns so you can trade them for a profit.{" "}
+                    Technical analysis is what drives trading. To learn how to
+                    read charts and recognise chart patterns so you can trade
+                    them for a profit, use the books we've selected.
                   </p>
                 </div>
                 <button
@@ -159,9 +159,9 @@ const HomepageFeatures = () => {
                 </div>
                 <div className="textbox">
                   <p className="text">
-                    Learn several investment strategies employed by the most
-                    successful traders worldwide and imitate these strategies to
-                    profit similarly to them.
+                    Learn a couple of the trading strategies utilised by some of
+                    the most successful traders in the globe then apply them to
+                    your advantage when trading.
                   </p>
                 </div>
                 <button
@@ -187,13 +187,13 @@ const HomepageFeatures = () => {
           <div className="card-image m-dw-1 has-transparent">
             <img src="images/delivery-truck.png" />
           </div>
-          <div className="subtitle is-dark regular is-3">Fast delivery</div>
+          <div className="subtitle is-dark regular is-3">Quick delivery</div>
         </div>
         <div className="features center-x">
           <div className="card-image m-dw-1 has-transparent">
             <img src="images/delivery.png" />
           </div>
-          <div className="subtitle is-dark regular is-3">COD available</div>
+          <div className="subtitle is-dark regular is-3">Available on COD</div>
         </div>
         <div className="features center-x">
           <div className="card-image has-transparent">

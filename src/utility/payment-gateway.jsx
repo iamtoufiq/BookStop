@@ -5,7 +5,7 @@ const paymentGateway = async (amount) => {
   const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
 
   const options = {
-    key: "rzp_test_1DkvrVVAyqheiz",
+    key: "rzp_test_OQzZny6NbR8gus",
     amount: amount,
     currency: "USD",
     name: "Elegance Book Store",
@@ -15,9 +15,9 @@ const paymentGateway = async (amount) => {
       toast.success("Order placed");
     },
     prefill: {
-      name: "Gaurav Kumar",
-      email: "gaurav.kumar@example.com",
-      contact: "9999999999",
+      name: "Toufiq Choudhari",
+      email: "toufiq.choudhari@example.com",
+      contact: "9359550208",
     },
     theme: {
       color: "#3d53f6",

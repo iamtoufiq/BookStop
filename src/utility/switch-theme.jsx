@@ -1,31 +1,31 @@
+import React, { useEffect, useState } from "react";
+
 const SwitchTheme = () => {
-  if (localStorage.getItem("darkMode") === null) {
-    localStorage.setItem("darkMode", "false");
-  }
-  const checkStatus = () => {
-    if (localStorage.getItem("darkMode") === "true") {
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  useEffect(() => {
+    if (isDarkMode) {
       document.body.classList.add("dark-theme");
-    }
-  };
-
-  const changeStatus = () => {
-    if (localStorage.getItem("darkMode") === "true") {
-      localStorage.setItem("darkMode", false);
-      document.body.classList.toggle("dark-theme");
     } else {
-      localStorage.setItem("darkMode", "true");
-      document.body.classList.toggle("dark-theme");
+      document.body.classList.remove("dark-theme");
     }
-  };
+    localStorage.setItem("darkMode", isDarkMode);
+  }, [isDarkMode]);
 
-  checkStatus();
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
     <button
-      onClick={changeStatus}
-      className="dark-mode btn-icon is-dark nav-icons nav-theme-btn"
+      onClick={toggleDarkMode}
+      className={`dark-mode btn-icon ${
+        isDarkMode ? "is-dark" : ""
+      } nav-icons nav-theme-btn`}
     >
-      <i className="fas is-dark fa-moon" />
+      <i className={`fas ${isDarkMode ? "is-dark" : ""} fa-moon`} />
     </button>
   );
 };
