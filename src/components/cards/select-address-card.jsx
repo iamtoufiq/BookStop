@@ -53,7 +53,7 @@ const SelectAddressCard = () => {
           <div className="select-address-name semibold is-lighter is-3">
             <i className="fas fa-plus m-r-1"></i>Add Address
             {/* <h3>Toufiq Choudhari</h3>
-            <p>Block-7/B, street-22, Raipur, Chhattisgarh, India</p> */}
+            <p>Block-7/B, street-22, bhiwandi, Thane, India</p> */}
           </div>
         </div>
       )}

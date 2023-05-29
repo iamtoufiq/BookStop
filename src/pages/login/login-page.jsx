@@ -15,10 +15,14 @@ const LoginPage = () => {
   const from = location.state?.from?.pathname || "/";
 
   const demoCredentialsLoginHandler = async () => {
-    setPageLoading(true);
-    setFormField(demoCredentials);
-    await loginHandler(demoCredentials, from);
-    setPageLoading(false);
+    try {
+      setPageLoading(true);
+      setFormField(demoCredentials);
+      await loginHandler(demoCredentials, from);
+      setPageLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const validateForm = () => {

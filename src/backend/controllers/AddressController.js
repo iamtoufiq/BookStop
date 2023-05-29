@@ -13,7 +13,6 @@ import { v4 as uuid } from "uuid";
  * */
 
 export const getAllAddressesHandler = function (schema, request) {
-  console.log("hell");
   const userId = requiresAuth.call(this, request);
   if (!userId) {
     new Response(
