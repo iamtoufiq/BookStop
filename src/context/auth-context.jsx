@@ -30,6 +30,7 @@ const AuthProvider = ({ children }) => {
       toast.info("Login new account");
     } catch (error) {
       toast.error("Sign up failed");
+      console.log(error);
     }
   };
 
