@@ -51,6 +51,7 @@ const AuthProvider = ({ children }) => {
       toast.success("Login successfull");
       navigate(from);
     } catch (error) {
+      console.log(error);
       toast.error("Login failed");
     }
   };
