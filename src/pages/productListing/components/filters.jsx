@@ -52,7 +52,7 @@ const Filters = () => {
           max={2000}
           className="slider"
           list="tickmarks"
-          value={range}
+          value={range || ""}
           onChange={(e) =>
             filterClickHandler({
               type: reducerAction.SELECT_RANGE,
@@ -86,7 +86,7 @@ const Filters = () => {
                     onChange={(e) =>
                       filterClickHandler({
                         type: reducerAction[`CATEGORY_${cat.toUpperCase()}`],
-                        value: e.target.checked,
+                        value: e.target.checked || "",
                       })
                     }
                   />
@@ -109,7 +109,7 @@ const Filters = () => {
                   onChange={() =>
                     filterClickHandler({
                       type: reducerAction.SELECT_RATING,
-                      value: num,
+                      value: num || "",
                     })
                   }
                   name="opinion"
