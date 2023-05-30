@@ -30,7 +30,7 @@ const AddressBlock = ({ addressData, setEditAddressID }) => {
       </div>
       <div className="flex-r-w">
         <i
-          //  onClick={clickEdit}
+          //  onClick={clickEdit} editing
           className="fas fa-edit m-l-4 is-4 m-dw-3"
         ></i>
         <i
