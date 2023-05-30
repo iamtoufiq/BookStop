@@ -55,7 +55,7 @@ const CartCard = ({ product }) => {
                 setLoading={setLoading}
               />
               <input
-                value={qty}
+                value={qty || ""}
                 className="input-counter m-x-1 is-2 p-y-0"
                 type="number"
                 readOnly

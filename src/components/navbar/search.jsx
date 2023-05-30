@@ -40,7 +40,7 @@ const Search = () => {
           setSearchText(e.target.value);
           searchInputHandler(e.target.value);
         }}
-        value={searchText}
+        value={searchText || ""}
         type="text"
         className="form-input br-3"
         placeholder="Search by book, author"

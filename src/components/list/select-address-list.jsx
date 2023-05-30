@@ -17,7 +17,6 @@ const SelectAddressList = ({ address }) => {
       >
         <div className="select-address-name semibold is-3">{name}</div>
         <div className="is-3 select-address-modal-para p-dw-1 p-1-r">
-          {console.log(`value of street is ${state}`)}
           {street}, {city}, {state}, {country}
         </div>
       </div>
