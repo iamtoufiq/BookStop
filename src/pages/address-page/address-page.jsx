@@ -17,16 +17,33 @@ const AddressPage = () => {
   const [addressModal, setAddressModal] = useState(false);
   const [editAddressID, setEditAddressID] = useState(null);
 
+  // const showAddressModal = () => {
+  //   setAddressModal(true);
+  //   setEditAddressID(null);
+  // };
   const showAddressModal = () => {
     setAddressModal(true);
     setEditAddressID(null);
   };
-
+  // const hideAddressModal = () => {
+  //   setAddressModal(false);
+  //   setEditAddressID(null);
+  // };
   const hideAddressModal = () => {
     setAddressModal(false);
     setEditAddressID(null);
   };
-
+  // useEffect(() => {
+  //   (async () => {
+  //     await getUserAddress(token, dispatch);
+  //     console.log(address);
+  //     setAddressList(
+  //       address.map((address, ind) => (
+  //         <AddressBlock addressData={address} key={ind} />
+  //       ))
+  //     );
+  //   })();
+  // }, [address]);
   useEffect(() => {
     (async () => {
       await getUserAddress(token, dispatch);
@@ -38,7 +55,17 @@ const AddressPage = () => {
       );
     })();
   }, [address]);
-
+  // useEffect(() => {
+  //   setAddressList(
+  //     address.map((address, ind) => (
+  //       <AddressBlock
+  //         addressData={address}
+  //         setEditAddressID={setEditAddressID}
+  //         key={ind}
+  //       />
+  //     ))
+  //   );
+  // }, [dataState]);
   useEffect(() => {
     setAddressList(
       address.map((address, ind) => (
@@ -50,10 +77,12 @@ const AddressPage = () => {
       ))
     );
   }, [dataState]);
-
   return (
     <main>
       <AddAddressModal
+        // hideAddressModal={hideAddressModal}
+        // addressModal={addressModal}
+        // editAddressID={editAddressID}
         hideAddressModal={hideAddressModal}
         addressModal={addressModal}
         editAddressID={editAddressID}

@@ -40,10 +40,7 @@ const SelectAddressCard = () => {
           <div className="is-3 select-address-para p-dw-1 p-1-r">
             {street}, {city}, {state}, {country}
           </div>
-          <i
-            className="far m-up-1 is-3 fa-edit"
-            onClick={console.log("editing address")}
-          ></i>
+          <i className="far m-up-1 is-3 fa-edit"></i>
         </div>
       ) : (
         <div

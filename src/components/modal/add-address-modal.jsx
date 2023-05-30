@@ -89,7 +89,7 @@ const AddAddressModal = ({ hideAddressModal, addressModal, editAddressID }) => {
               type="text"
               className="form-input m-up-1"
               placeholder="Full Name"
-              value={name}
+              value={name || ""}
             />
           </div>
           <div className="form-div align-left m-up-1">
@@ -102,7 +102,7 @@ const AddAddressModal = ({ hideAddressModal, addressModal, editAddressID }) => {
               type="text"
               className="form-input m-up-1"
               placeholder="House, street"
-              value={street}
+              value={street || ""}
             />
           </div>
           <div className="form-div align-left m-up-1">
@@ -115,7 +115,7 @@ const AddAddressModal = ({ hideAddressModal, addressModal, editAddressID }) => {
               type="text"
               className="form-input m-up-1"
               placeholder="City"
-              value={city}
+              value={city || ""}
             />
           </div>
           <div className="form-div align-left m-up-1">
@@ -128,7 +128,7 @@ const AddAddressModal = ({ hideAddressModal, addressModal, editAddressID }) => {
               type="text"
               className="form-input m-up-1"
               placeholder="State"
-              value={state}
+              value={state || ""}
             />
           </div>
           <div className="form-div align-left m-up-1">
@@ -141,7 +141,7 @@ const AddAddressModal = ({ hideAddressModal, addressModal, editAddressID }) => {
               type="number"
               className="form-input m-up-1"
               placeholder="zip code"
-              value={zipCode}
+              value={zipCode || ""}
             />
           </div>
           <div className="form-div align-left m-up-1">
@@ -154,7 +154,7 @@ const AddAddressModal = ({ hideAddressModal, addressModal, editAddressID }) => {
               type="number"
               className="form-input m-up-1"
               placeholder="Phone number"
-              value={mobile}
+              value={mobile || ""}
             />
           </div>
 
