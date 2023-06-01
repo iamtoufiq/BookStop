@@ -103,8 +103,10 @@ const getProductsData = async (dispatch) => {
     console.error(err);
   }
 };
-// ----------------- focus here -----------------------
+// getting user address
 const getUserAddress = async (token, dispatch) => {
+  // getUserAddress(token, dispatch);
+
   try {
     const { data } = await axios.get("/api/user/address", getHeader(token));
     dispatch({ type: reducerAction.UPDATE_ADDRESS, value: data.address });
@@ -112,10 +114,8 @@ const getUserAddress = async (token, dispatch) => {
     // console.log(err);
   }
 };
-
-// ----------------- focus here -----------------------
+// adding user address
 const addAddress = async (addressData, token, dispatch) => {
-  // addressData= {street: '123 Main Street', city: 'Example City', state: 'Example State', zipCode: '123456', country: 'India', …}
   try {
     const { data } = await axios.post(
       "/api/user/address",
@@ -138,7 +138,6 @@ const addAddress = async (addressData, token, dispatch) => {
     });
     toast.success("Address Added");
   } catch (err) {
-    // console.log(err);
     toast.error("Add Address failed");
   }
 };
@@ -166,6 +165,7 @@ const updateAddress = async (addressID, addressData, token, dispatch) => {
       },
       getHeader(token)
     );
+
     dispatch({ type: reducerAction.UPDATE_ADDRESS, value: data.address });
     toast.info("Address Updated");
   } catch (err) {
