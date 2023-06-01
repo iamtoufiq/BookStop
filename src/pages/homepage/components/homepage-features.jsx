@@ -85,7 +85,7 @@ const HomepageFeatures = () => {
                 <div className="card-image has-transparent">
                   <img
                     className="img-responsive width-80"
-                    src="images/bitcoin.png"
+                    src="images/imagesbitcoins.png"
                   />
                 </div>
               </div>

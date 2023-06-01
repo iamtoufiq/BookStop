@@ -17,72 +17,42 @@ const AddressPage = () => {
   const [addressModal, setAddressModal] = useState(false);
   const [editAddressID, setEditAddressID] = useState(null);
 
-  // const showAddressModal = () => {
-  //   setAddressModal(true);
-  //   setEditAddressID(null);
-  // };
   const showAddressModal = () => {
     setAddressModal(true);
     setEditAddressID(null);
   };
-  // const hideAddressModal = () => {
-  //   setAddressModal(false);
-  //   setEditAddressID(null);
-  // };
+
   const hideAddressModal = () => {
     setAddressModal(false);
     setEditAddressID(null);
   };
-  // useEffect(() => {
-  //   (async () => {
-  //     await getUserAddress(token, dispatch);
-  //     console.log(address);
-  //     setAddressList(
-  //       address.map((address, ind) => (
-  //         <AddressBlock addressData={address} key={ind} />
-  //       ))
-  //     );
-  //   })();
-  // }, [address]);
+
   useEffect(() => {
     (async () => {
       await getUserAddress(token, dispatch);
-      console.log(address);
       setAddressList(
-        address.map((address, ind) => (
-          <AddressBlock addressData={address} key={ind} />
+        address.map((address, inde) => (
+          <AddressBlock addressData={address} key={inde} />
         ))
       );
     })();
-  }, [address]);
-  // useEffect(() => {
-  //   setAddressList(
-  //     address.map((address, ind) => (
-  //       <AddressBlock
-  //         addressData={address}
-  //         setEditAddressID={setEditAddressID}
-  //         key={ind}
-  //       />
-  //     ))
-  //   );
-  // }, [dataState]);
+  }, []);
+
   useEffect(() => {
     setAddressList(
-      address.map((address, ind) => (
+      address.map((address, inde) => (
         <AddressBlock
+          key={inde}
           addressData={address}
           setEditAddressID={setEditAddressID}
-          key={ind}
         />
       ))
     );
   }, [dataState]);
+
   return (
     <main>
       <AddAddressModal
-        // hideAddressModal={hideAddressModal}
-        // addressModal={addressModal}
-        // editAddressID={editAddressID}
         hideAddressModal={hideAddressModal}
         addressModal={addressModal}
         editAddressID={editAddressID}
@@ -95,7 +65,7 @@ const AddressPage = () => {
             className="is-light flex-c-w align-center justify-content-center add-address br-2"
           >
             <i className="fa-solid fa-plus is-6" />
-            <div className="title m-up-1 semibold is-4">Add a address</div>
+            <div className="title m-up-1 semibold is-4">Add address</div>
           </div>
           {addressList}
         </div>
