@@ -23,8 +23,8 @@ Checkout the live website [here](https://book-stop.vercel.app/)
     
   [Address management](https://book-stop.vercel.app/address)
 
-Misc Features
+## Misc Features
 
-  Persistent Dark mode
-  Mobile responsive
+   Persistent Dark mode
+    Mobile responsive
 
