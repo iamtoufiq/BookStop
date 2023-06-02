@@ -3,7 +3,7 @@ E commerce site for financial market books made using Elegance Ui.
 Live Deployment
 Checkout the live website [here](https://book-stop.vercel.app/)
 
-Features
+##Features
 
   [Homepage](https://book-stop.vercel.app/)
     
