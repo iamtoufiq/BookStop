@@ -5,15 +5,15 @@ Checkout the live website [here](https://book-stop.vercel.app/)
 
 Features
 
-    Homepage
-    Product Listing with filters
-    Wishlist management
-    Cart management
-    Single product page
-    Login/Signup pages
+    [Homepage](https://book-stop.vercel.app/)
+    [Product Listing with filters](https://book-stop.vercel.app/productListing)
+    [Wishlist management](https://book-stop.vercel.app/Wishlist)
+    [Cart management](https://book-stop.vercel.app/cart)
+    [Single product page](https://book-stop.vercel.app/productListing/stock1)
+    [Login/Signup pages](https://book-stop.vercel.app/login)
     Search Products
     Search Result page
-    Address management
+    [Address management](https://book-stop.vercel.app/address)
 
 Misc Features
 
