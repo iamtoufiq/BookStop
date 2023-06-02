@@ -5,26 +5,26 @@ Checkout the live website [here](https://book-stop.vercel.app/)
 
 Features
 
-    [Homepage](https://book-stop.vercel.app/)
+  [Homepage](https://book-stop.vercel.app/)
     
-    [Product Listing with filters](https://book-stop.vercel.app/productListing)
+  [Product Listing with filters](https://book-stop.vercel.app/productListing)
     
-    [Wishlist management](https://book-stop.vercel.app/Wishlist)
+  [Wishlist management](https://book-stop.vercel.app/Wishlist)
     
-    [Cart management](https://book-stop.vercel.app/cart)
+  [Cart management](https://book-stop.vercel.app/cart)
     
-    [Single product page](https://book-stop.vercel.app/productListing/stock1)
+  [Single product page](https://book-stop.vercel.app/productListing/stock1)
     
-    [Login/Signup pages](https://book-stop.vercel.app/login)
+  [Login/Signup pages](https://book-stop.vercel.app/login)
     
-    Search Products
+  Search Products
     
-    Search Result page
+  Search Result page
     
-    [Address management](https://book-stop.vercel.app/address)
+  [Address management](https://book-stop.vercel.app/address)
 
 Misc Features
 
-    Persistent Dark mode
-    Mobile responsive
+  Persistent Dark mode
+  Mobile responsive
 
