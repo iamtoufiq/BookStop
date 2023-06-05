@@ -60,8 +60,16 @@ const AddAddressModal = ({ hideAddressModal, addressModal, editAddressID }) => {
   }, [editAddressID]);
 
   return (
+    // <div
+    //   style={{ display: addressModal || editAddressID ? "block" : "none" }}
+    //   className="modal-wrapper"
+    // >
     <div
-      style={{ display: addressModal || editAddressID ? "block" : "none" }}
+      style={{
+        display: addressModal || editAddressID ? "block" : "none",
+        overflow: "auto",
+        maxHeight: "100vh",
+      }}
       className="modal-wrapper"
     >
       <div className="address-modal">
